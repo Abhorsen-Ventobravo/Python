@@ -38,8 +38,8 @@ def count_courses(candidates):
     courses[0] = totalDotNet/total
     courses[1] = totalIOS/total
     courses[2] = totalQA/total
-    
     return courses
+
 def sum_age_of_candidates_of_course(candidates,courseName):
     courseCandidates = get_candidates_of_course(candidates,courseName)
     return sum(map(lambda candidate: int(candidate.age.split(" ")[0]),courseCandidates))
@@ -48,7 +48,6 @@ def average_age(candidates,courseName):
     totalCandidates = len(get_candidates_of_course(candidates,courseName))
     totalAgeCandidates = sum_age_of_candidates_of_course(candidates,courseName)
     avarageAge = totalAgeCandidates/totalCandidates
-
     return avarageAge
 
 def get_oldest_candidate(candidates,courseName):
@@ -62,8 +61,8 @@ def get_youngest_candidate(candidates,courseName):
     return youngest    
 
 def total_states(candidates):
-     
-     return len(set(list(map(lambda candidate: candidate.state,candidates))))
+    return len(set(list(map(lambda candidate: candidate.state,candidates))))
+
 def save_order_by_name(candidates):
     candidates.sort()
     file = open("Sorted_AppAcadememy_Candidates.csv","w",encoding="utf-8")
@@ -76,7 +75,6 @@ def find_intructor_api_net(candidates):
         nameSeparado = candidate.name.split(" ")
         if nameSeparado[1][-1] == "k" and nameSeparado[0]:
             if candidate.age[0:2] == "21" or candidate.age[0:2] == "23" or candidate.age[0:2] == "25" or candidate.age[0:2] == "27":
-               
                 print("\nO instrutor de API .NET é:",candidate.name)
                 
 
